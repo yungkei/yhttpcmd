@@ -1,0 +1,5 @@
+server:
+  port: 8080
+command_configs:
+  - command: echo
+    route: echo
