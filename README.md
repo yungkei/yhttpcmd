@@ -1,7 +1,7 @@
 # yhttpcmd
 [![Software License](https://img.shields.io/github/license/yungkei/yhttpcmd)](LICENSE)
-![Release](https://img.shields.io/github/v/release/yungkei/yhttpcmd)
-![Docker](https://img.shields.io/docker/v/yungkei/yhttpcmd)
+![Release](https://img.shields.io/github/v/release/yungkei/yhttpcmd?logo=github)
+![Docker](https://img.shields.io/docker/v/yungkei/yhttpcmd?logo=docker)
 
 yhttpcmd is a tiny cmd2http(convert command as http service) server, used to execute local commands via http.
 
