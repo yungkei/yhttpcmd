@@ -1,20 +1,45 @@
 # yhttpcmd
-[![Software License](https://img.shields.io/github/license/yungkei/yhttpcmd
-)](LICENSE)
+[![Software License](https://img.shields.io/github/license/yungkei/yhttpcmd)](LICENSE)
+![Release](https://img.shields.io/github/v/release/yungkei/yhttpcmd)
+![Docker](https://img.shields.io/docker/v/yungkei/yhttpcmd)
 
 yhttpcmd is a tiny cmd2http(convert command as http service) server, used to execute local commands via http.
 
-## Installation
+## Install
+There are various ways of installing yhttpcmd.
 
+### Go 
 ```bash
 go install github.com/yungkei/yhttpcmd@master
 ```
+
+### Docker Images
+Docker images are available on [Docker Hub](https://hub.docker.com/r/yungkei/yhttpcmd/).
+
+You can launch a yhttpcmd container for trying it out with
+
+```bash
+docker run --name yhttpcmd -d -p 8080:8080 yungkei/yhttpcmd
+```
+
+yhttpcmd will now be reachable at <http://localhost:8080/>.
+
+It is worth noting that, yhttpcmd only converts the commands set in the configuration into HTTP services.
+
 
 ## Usage
 
 ### Linux/Windows/MacOS
 ```bash
 yhttpcmd start --config=yhttpcmd.yaml
+```
+
+### Docker
+```dockerfile
+FROM yungkei/yhttpcmd
+# overwrite default configuration file
+COPY yhttpcmd.yaml /yhttpcmd/yhttpcmd.yaml
+CMD [ "./yhttpcmd","start" ]
 ```
 
 ### Configuration
@@ -24,8 +49,10 @@ server:
 command_configs:
   - command: echo
     route: echo
+  - command: <cmd>
+    route: <route>
 ```
 
 ## License
 
-yhttpcmd is released under the Apache 2.0 license.
+Apache License 2.0, see [LICENSE](https://github.com/yungkei/yhttpcmd/blob/main/LICENSE).

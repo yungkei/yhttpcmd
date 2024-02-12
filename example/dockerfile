@@ -1,0 +1,4 @@
+FROM yungkei/yhttpcmd
+
+COPY yhttpcmd.yaml /yhttpcmd/yhttpcmd.yaml
+CMD [ "./yhttpcmd","start" ]
