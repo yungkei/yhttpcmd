@@ -53,6 +53,12 @@ command_configs:
     route: <route>
 ```
 
+### Execute commands via HTTP
+``` bash
+curl -H "Content-Type:application/json" -d "{\"args\":\"hello\"}" -X POST 127.0.0.1:8080/echo
+{"Command":"/bin/echo hello","Message":"hello\n"}
+```
+
 ## License
 
 Apache License 2.0, see [LICENSE](https://github.com/yungkei/yhttpcmd/blob/main/LICENSE).
